@@ -3,7 +3,17 @@ const url = require('url');
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.end('server started!');
+  const path = req.url;
+  if (path === '/' || path === '/overview') {
+    res.end('overview');
+  } else if (path === '/product') {
+    res.end('product');
+  } else {
+    res.writeHead(404, {
+      'content-type': 'text/html'
+    });
+    res.end('<h1>page not found!</h1>');
+  }
 });
 
 server.listen('8000', '127.0.0.1', () => {

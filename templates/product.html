@@ -167,6 +167,10 @@
                 justify-content: center;
             }
 
+            .not_organic {
+                display: none;
+            }
+
             .product__organic h5 {
                 font-weight: 900;
                 text-transform: uppercase;
@@ -274,8 +278,10 @@
             <h1>🌽 Node Farm 🥦</h1>
 
             <figure class="product">
-                <div class="product__organic"><h5>{%organic%}</h5></div>
-                <a href="#" class="product__back">
+                <div class="product__organic {%not_organic%}">
+                    <h5>{%organic%}</h5>
+                </div>
+                <a href="/" class="product__back">
                     <span class="emoji-left">👈</span>Back
                 </a>
                 <div class="product__hero">
